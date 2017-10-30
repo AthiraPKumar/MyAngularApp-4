@@ -1,0 +1,68 @@
+<form #f="ngForm" (ngSubmit)=submit(f)>
+	<div ngModelGroup="contact" #contact="ngModelGroup">
+		<div class="form-group">
+		<!-- <div *ngIf="!contact.valid">...</div> -->
+			<label for="firstName">First Name</label>
+			<input type="text" id="firstName" name="firstName" class="form-control" ngModel  #firstName="ngModel" 
+			minlength="3" maxlength="10" pattern="banana" required/>
+			<div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+			<div *ngIf="firstName.errors.required">first name is required</div>
+			<div *ngIf="firstName.errors.minlength">firstname should be minimum {{firstName.errors.minlength.requiredLength}} letters</div>
+			<div *ngIf="firstName.errors.pattern">firstname dosent match the pattern</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- textarea - commentbox -->
+	<div class="form-group">
+		<label for="comment">Comment</label>
+		<textarea id="comment" name="comment" ngModel #comment="ngModel" cols="30" rows="10" class="form-control"></textarea>
+	</div>
+
+	<!-- checkbox -->
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" ngModel name="isSubscribed"/>Please subscribe
+		</label>			
+	</div>
+
+	<!-- dropdown list -->
+	<div class="form-group">
+		<label for="contactMethod">Contact Method</label>
+		<select name="contactMethod" id="contactMethod" class="form-control" ngModel #contactMethod="ngModel">
+			<option value=""></option>
+			<option *ngFor="let method of contactMethods" [value]="method.id">{{ method.name }}</option>
+
+			<!-- <option *ngFor="let method of contactMethods" [ngValue]="method">{{ method.name }}</option> -->
+		</select>
+	</div>
+
+	<!-- radiobutton -->
+
+	<!-- radiobutton hardcoded value-->
+<!-- 	<div class="radio">
+		<label>
+			<input type="radio" ngModel name="gender" value="1">Male
+		</label>
+	</div>
+	<div class="radio">
+		<label>
+			<input type="radio" ngModel name="gender" value="2">Female
+		</label>
+	</div> -->
+
+	<!-- radiobutton displayed dynamically value-->
+	<div *ngFor="let gender of genderStatus" class="radio">
+		<label>
+			<input type="radio" ngModel name="gender" [value]="gender.id">
+			{{ gender.name }}
+		</label>
+	</div>
+
+	<p>
+		{{ f.value | json }}
+	</p>
+
+	<button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>
+

@@ -12,28 +12,26 @@ import { AppError } from './../common/app-error';
 })
 
 export class PostsComponent implements OnInit{
-posts = [];
+  posts = [];
 
   constructor(private service: PostService) {
-   }
+  }
 
   ngOnInit(){
-   this.service.getPosts()
-    .subscribe(response => {
-      // console.log(response.json());
-      this.posts = response.json();
-    });
+   this.service.getAll()
+    .subscribe(posts => this.posts = posts);          // instead of response we get an array of objects
   }
 
    createPost(input: HTMLInputElement){
    	let post = {title: input.value};
    	input.value = '';
-   	this.service.createPost(post)
+
+   	this.service.create(post)
    	.subscribe(
-      response => {
-     		post['id'] = response.json().id;
+      newPost => {
+     		post['id'] = newPost.id;
      		this.posts.splice(0, 0, post);
-     		console.log(response.json());
+     		console.log(newPost);
    	  },
       (error: AppError) => {
         if(error instanceof BadInput){     // if error is 400
@@ -44,18 +42,18 @@ posts = [];
    }
 
    updatePost(post){
-    this.service.updatePost(post)
+    this.service.update(post)
     // this.http.put(this.url, JSON.stringify(post))
     .subscribe(
-      response => {
-        console.log(response.json());
+      updatedPost => {
+        console.log(updatedPost);
       });
    }
 
    deletePost(post){
-    this.service.deletePost(345)
+    this.service.delete(345)
     .subscribe(
-      response => {
+      () => {                     // response you get null when you delete an object - empty parenthesis
         let index = this.posts.indexOf(post);
         this.posts.splice(index, 1);
       }, 

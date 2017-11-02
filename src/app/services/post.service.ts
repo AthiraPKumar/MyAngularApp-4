@@ -10,3 +10,6 @@ export class PostService extends DataService {
     super('http://jsonplaceholder.typicode.com/posts', http);
   }   
 }
+
+// in individual component service you only pass the api url.
+//  CRUD operations you do in the base class 'DataServices'. 

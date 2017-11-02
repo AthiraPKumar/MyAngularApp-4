@@ -6,6 +6,7 @@ import { BadInput } from './../common/bad-input';
 import { AppError } from './../common/app-error';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/promise';  
 import 'rxjs/add/observable/throw';
 
 @Injectable()
@@ -18,7 +19,8 @@ export class DataService {
     .catch(this.handleError);
   }
 
-  create(resourse){     //in http we always rename the params as resourse
+  create(resourse){         //in http we always rename the params as resourse
+    // return Observable.throw(new AppError());       // factory method that throws error...used temporarily
   	return this.http.post(this.url,JSON.stringify(resourse))
     .map(response => response.json())
     .catch(this.handleError);
@@ -31,9 +33,11 @@ export class DataService {
   }
 
   delete(id){
+    // return Observable.throw(new AppError());       // for temporarily throwing an error
   	return this.http.delete(this.url + '/' + id)
     .map(response => response.json())
-    .catch(this.handleError);    // not calling this method but simply passing the reference
+    // .retry(3)
+    .catch(this.handleError);       // not calling this method but simply passing the reference
   }
 
   private handleError(error: Response){
@@ -45,5 +49,8 @@ export class DataService {
 
     return Observable.throw(new AppError(error));
   }
-
 }
+
+
+// you can convert observable to promise but not recomended.
+// promise --- .then() & .catch()

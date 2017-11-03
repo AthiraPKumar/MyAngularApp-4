@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { SummaryPipe } from './summary.pipe';
 import { CoursesComponent } from './courses.component';
@@ -28,8 +29,10 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PostsComponent } from './posts/posts.component';
 import { GithubFollowersComponent } from './github-followers/github-followers.component';
-
-
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { GithubProfileComponent } from './github-profile/github-profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -52,15 +55,39 @@ import { GithubFollowersComponent } from './github-followers/github-followers.co
     ChangePasswordComponent,
     PostsComponent,
     GithubFollowersComponent,
-
-
-   
+    NavbarComponent,
+    HomeComponent,
+    GithubProfileComponent,
+    NotFoundComponent,
+  
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      { 
+        path: '',
+        component: HomeComponent 
+      },
+      { 
+        path: 'followers/:id/:username', 
+        component: GithubProfileComponent 
+      },
+      { 
+        path: 'followers', 
+        component: GithubFollowersComponent 
+      },
+      { 
+        path: 'posts', 
+        component: PostsComponent
+      },
+      { 
+        path: '**', 
+        component: NotFoundComponent
+      }
+    ])
   ],
   providers: [
     PostService,

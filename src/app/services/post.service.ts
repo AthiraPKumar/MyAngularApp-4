@@ -12,4 +12,4 @@ export class PostService extends DataService {
 }
 
 // in individual component service you only pass the api url.
-//  CRUD operations you do in the base class 'DataServices'. 
+//  CRUD operations you do in the base class called 'DataServices' in services folder itself. 

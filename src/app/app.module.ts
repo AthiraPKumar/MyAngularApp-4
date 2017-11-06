@@ -95,7 +95,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
   	AuthorsService,
     GithubFollowersService,
     {provide : ErrorHandler, useClass: AppErrorHandler}
-  	],
+	],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router'; 
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GithubProfileComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router) { }
+
+  submit(){
+    this.router.navigate(['/followers'],{
+      queryParams:{page: 1, order: 'newest'}
+    });
+  }
 
   ngOnInit() {
   	// this is not an observable - saving id using snapshot method

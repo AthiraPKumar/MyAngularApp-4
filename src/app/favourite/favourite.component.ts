@@ -15,6 +15,7 @@ export class FavouriteComponent {
   onClick(){
   	this.isFavourite = !this.isFavourite;
   	this.click.emit({ newValue:this.isFavourite });
+    console.log(this.isFavourite,"clicked");
   }
 }
 

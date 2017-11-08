@@ -1,9 +1,9 @@
 <form>
-	<input type="text" class="form-control" (keyup.enter)="addTopic(topic)" #topic>
+	<input type="text" name="listName" placeholder="add & press enter" class="form-control" (keyup.enter)="addTopic(topic)" #topic>
 	<ul class="list-group">
 		<li class="list-group-item" *ngFor="let topic of topics.controls" (click)="removeTopic(topic)">
 			{{topic.value}}
 		</li> 
-		
 	</ul>
+	<!-- <button class="btn btn-primary" (click)="goHome()">back</button> -->
 </form>

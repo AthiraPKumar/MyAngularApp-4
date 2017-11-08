@@ -1,3 +1,5 @@
+// example of using reactive forms - form-builders 
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormArray, FormBuilder, Validators } from '@angular/forms';
 
@@ -33,9 +35,12 @@ export class NewCourseFormComponent {
 		return this.form.get('topics') as FormArray;
 	}
 
+	goHome(){
+		this.router.navigate(['']);
+	}
 
 
-	constructor(fb: FormBuilder){
+	constructor(fb: FormBuilder,private router: Router){
 		this.form = fb.group({
 			name:['', Validators.required],
 			contact: fb.group({

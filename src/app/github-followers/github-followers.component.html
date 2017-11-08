@@ -1,6 +1,7 @@
 <!-- This format is used from media input - getbootstrap.com under component -->
 <!-- instead of using routerLink use property binding [routerLink] for attaching more then 2 properties-->
 <div *ngFor="let follower of followers" class="media">
+<div class="col-md-10">
   <div class="media-left">
     <a href="#">
       <img class="avatar media-object" src="{{ follower.avatar_url }}" alt="...">
@@ -11,5 +12,9 @@
     	<a [routerLink]="['/followers', follower.id, follower.login]">{{ follower.login }}</a>
 	</h4>
     <a href="follower.html_url">{{ follower.html_url }}</a>
+  </div>
+</div>
+  <div class="col-md-2">
+    <favourite></favourite>
   </div>
 </div>

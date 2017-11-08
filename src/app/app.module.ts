@@ -33,6 +33,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { GithubProfileComponent } from './github-profile/github-profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     GithubProfileComponent,
     NotFoundComponent,
+    RegisterComponent,
   
   ],
   imports: [
@@ -82,6 +84,22 @@ import { NotFoundComponent } from './not-found/not-found.component';
       { 
         path: 'posts', 
         component: PostsComponent
+      },
+      { 
+        path: 'todo', 
+        component: NewCourseFormComponent
+      },
+      { 
+        path: 'change-Password', 
+        component: ChangePasswordComponent
+      },
+      { 
+        path: 'registration', 
+        component: RegisterComponent
+      },
+      { 
+        path: 'contact-form', 
+        component: ContactFormComponent
       },
       { 
         path: '**', 

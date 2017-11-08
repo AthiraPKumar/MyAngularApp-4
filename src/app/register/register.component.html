@@ -1,0 +1,26 @@
+<form [formGroup]="registerForm" #f="ngForm" (ngSubmit)=registerDetails(f)>
+<div class="col-md-6">
+	<div class="form-group">
+		<label for="">Name</label>
+		<input type="text" class="form-control" formControlName="username" id="username" [(ngModel)]="user.username">
+		<div class="alert alert-danger" *ngIf="username.touched && username.invalid">
+			<div *ngIf="username.errors.required">required</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="">Email</label>
+		<input type="text" class="form-control" formControlName="email" id="email" [(ngModel)]="user.email">
+		<div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+			<div *ngIf="email.errors.required">email required</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="">Address</label>
+		<input type="text" class="form-control" formControlName="address" id="address" [(ngModel)]="user.address">
+		<div class="alert alert-danger" *ngIf="address.touched && address.invalid">
+			<div *ngIf="address.errors.required">address required</div>
+		</div>
+	</div>
+	<button class="btn btn-primary">Submit</button>
+</div>
+</form>

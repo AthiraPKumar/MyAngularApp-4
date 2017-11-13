@@ -34,6 +34,7 @@ import { HomeComponent } from './home/home.component';
 import { GithubProfileComponent } from './github-profile/github-profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RegisterComponent } from './register/register.component';
+import { LikebuttonComponent } from './likebutton/likebutton.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { RegisterComponent } from './register/register.component';
     GithubProfileComponent,
     NotFoundComponent,
     RegisterComponent,
+    LikebuttonComponent,
   
   ],
   imports: [

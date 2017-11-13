@@ -4,5 +4,8 @@
 	<button class="btn btn-primary btn-sm" (click)="updatePost(post)">Update</button>
 	<button class="btn btn-danger btn-sm" (click)="deletePost(post)">Delete</button>
 		{{post.title}}
+
+
+		 <likebutton class="display-likes" [like]="heartLikes.like"></likebutton>
 	</li>
 </ul>

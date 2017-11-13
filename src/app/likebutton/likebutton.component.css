@@ -1,0 +1,8 @@
+.glyphicon{
+	cursor: pointer;
+	color: #ccc;
+}
+.highlighted{
+	color: red;
+	/*border-color: red;*/
+}

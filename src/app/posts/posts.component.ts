@@ -14,6 +14,12 @@ import { AppError } from './../common/app-error';
 export class PostsComponent implements OnInit{
   posts = [];
 
+  
+  heartLikes = {
+      like : 10,
+      isActive:false,
+  };
+
   constructor(private service: PostService) {
   }
 

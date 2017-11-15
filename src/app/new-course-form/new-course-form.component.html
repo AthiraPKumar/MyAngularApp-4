@@ -3,6 +3,7 @@
 	<ul class="list-group">
 		<li class="list-group-item" *ngFor="let topic of topics.controls" (click)="removeTopic(topic)">
 			{{topic.value}}
+			<span class="glyphicon glyphicon-remove icon-place"></span>
 		</li> 
 	</ul>
 	<!-- <button class="btn btn-primary" (click)="goHome()">back</button> -->

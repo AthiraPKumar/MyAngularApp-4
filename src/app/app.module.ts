@@ -35,6 +35,7 @@ import { GithubProfileComponent } from './github-profile/github-profile.componen
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RegisterComponent } from './register/register.component';
 import { LikebuttonComponent } from './likebutton/likebutton.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import { LikebuttonComponent } from './likebutton/likebutton.component';
     NotFoundComponent,
     RegisterComponent,
     LikebuttonComponent,
+    ArchiveComponent,
   
   ],
   imports: [
@@ -102,6 +104,10 @@ import { LikebuttonComponent } from './likebutton/likebutton.component';
       { 
         path: 'contact-form', 
         component: ContactFormComponent
+      },
+      {
+        path: 'archive/:year/:month',
+        component: ArchiveComponent
       },
       { 
         path: '**', 

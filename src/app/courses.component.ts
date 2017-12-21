@@ -59,7 +59,7 @@ export class CoursesComponent{
 
 
 	constructor(service:CoursesService){
-		// let service = new CoursesService();
+		// let service = new CoursesService();    // instance of the course service
 		this.courses = service.getCourses();
 
 	}

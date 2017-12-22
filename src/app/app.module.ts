@@ -36,6 +36,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RegisterComponent } from './register/register.component';
 import { LikebuttonComponent } from './likebutton/likebutton.component';
 import { ArchiveComponent } from './archive/archive.component';
+import { FavComponent } from './fav/fav.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { ArchiveComponent } from './archive/archive.component';
     RegisterComponent,
     LikebuttonComponent,
     ArchiveComponent,
+    FavComponent,
   
   ],
   imports: [
@@ -108,6 +110,10 @@ import { ArchiveComponent } from './archive/archive.component';
       {
         path: 'archive/:year/:month',
         component: ArchiveComponent
+      },
+      {
+        path: 'fav',
+        component: FavComponent
       },
       { 
         path: '**', 

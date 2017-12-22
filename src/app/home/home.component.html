@@ -3,3 +3,9 @@
 	  Kick start your life with Angular 4
 	</h1>
 </div>
+<h3>Archives</h3>
+<ul>
+	<li *ngFor="let archive of archives">
+		<a [routerLink]="['/archive', archive.year, archive.month]">{{ archive.year+ "/" +archive.month }}</a>
+	</li>
+</ul>

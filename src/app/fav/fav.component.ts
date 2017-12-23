@@ -12,7 +12,7 @@ export class FavComponent {
 
   onClick(){
   	this.isFav = !this.isFav;
-  	console.log(this.isFav);
+  	console.log("clicked: ",this.isFav);
   }
 
 

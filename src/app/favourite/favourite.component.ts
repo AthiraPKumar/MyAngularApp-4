@@ -9,13 +9,13 @@ import { Component, OnInit, Input , Output, EventEmitter } from '@angular/core';
 })
 
 export class FavouriteComponent {
-	@Input() isFavourite:boolean;
-	@Output('change') click = new EventEmitter();
+	@Input('isFavourite') isFavourite:boolean;
+	@Output('click') click = new EventEmitter();
 	
   onClick(){
   	this.isFavourite = !this.isFavourite;
   	this.click.emit({ newValue:this.isFavourite });
-    console.log(this.isFavourite,"clicked");
+    console.log("Favourite Changed: ",this.isFavourite);
   }
 }
 

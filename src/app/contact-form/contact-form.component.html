@@ -1,3 +1,4 @@
+<div class="container">
 <form #f="ngForm" (ngSubmit)=submit(f)>
 	<div ngModelGroup="contact" #contact="ngModelGroup">
 		<div class="form-group">
@@ -65,4 +66,5 @@
 
 	<button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
 </form>
+</div>
 

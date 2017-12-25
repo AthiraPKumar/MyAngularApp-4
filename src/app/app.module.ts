@@ -116,7 +116,7 @@ import { DetailViewComponent } from './detail-view/detail-view.component';
         component: ArchiveComponent
       },
       {
-        path: 'profile',
+        path: 'details',
         component: DetailViewComponent
       },
       { 

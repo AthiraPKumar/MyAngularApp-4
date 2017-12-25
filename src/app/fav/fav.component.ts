@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 
 @Component({
   selector: 'fav',
@@ -6,14 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./fav.component.css']
 })
 export class FavComponent {
-	isFav: boolean;
+	@Input('isFav') isFav: boolean;
 
-  constructor() { }
 
   onClick(){
   	this.isFav = !this.isFav;
   	console.log("clicked: ",this.isFav);
   }
 
+  lists = [1,2];
 
 }

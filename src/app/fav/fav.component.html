@@ -1,6 +1,29 @@
 <!-- eg. of class binding , this comp not a resusable component coz it does not have i/p & o/p property-->
+<h3>Test file</h3>
 <span class="glyphicon"
  [class.glyphicon-star]="isFav"
  [class.glyphicon-star-empty]="!isFav"
  (click)="onClick()"
- ></span>
+></span>
+<h3>{{isFav}}</h3>
+
+
+
+<!-- bootstrap-panel -->
+ <bootstrap-panel>
+ 	<div class="heading">Panel-Heading</div>
+ 	<div class="body">Panel-Body</div>
+ </bootstrap-panel>
+
+
+<!-- to show cetain detail of the page -->
+ <div *ngIf="lists.length > 0">
+ 	<h2>List of Courses</h2>
+ </div>
+ <div *ngIf="lists.length === 0">
+ 	<h2>No Courses Yet</h2>
+ </div>
+
+
+
+ 

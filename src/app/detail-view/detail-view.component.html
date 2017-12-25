@@ -10,9 +10,34 @@
 		</li>
 	</ul>
 	<div [ngSwitch]="viewMode">
-		<div *ngSwitchCase="'map'">Map view content</div>
-		<div *ngSwitchCase="'list'">List view content</div>
+		<div *ngSwitchCase="'map'">
+			<p>Map view content : This part is map view when you click on the first tab.</p>
+		</div>
+		<div *ngSwitchCase="'list'">
+			<p>List view content: This part is list view when you click on the second tab</p>
+		</div>
 		<div *ngSwitchDefault>Otherwise</div>
-	</div>
+	</div>	
 </div>
+<br/><br/><br/><br/>
+<div>
+	<p>state the index of list</p>
+	<button class="btn btn-warning" (click)="onAdd()">Add</button>
+	<ul>
+		<li *ngFor="let people of consumers; index as i">
+			{{i}} - {{people.name}}
+			<button class="btn btn-danger" (click)="onRemove(people)">Remove</button>
+			<button class="btn btn-default" (click)="onChange(people)">{{people.status}}</button>	
+		</li>
+	</ul>
 </div>
+<br/><br/><br/><br/>
+<!-- <div>
+	<ul>
+		<li *ngFor="let people of consumers; even as isEven">
+			{{people.name}} <span *ngIf="isEven">(Even)</span>
+		</li>
+	</ul>
+</div> -->
+</div>
+

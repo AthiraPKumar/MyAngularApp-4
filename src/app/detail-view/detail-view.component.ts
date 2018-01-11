@@ -6,12 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./detail-view.component.css']
 })
 export class DetailViewComponent {
-	viewMode = 'map';
+	viewMode:string = 'status';
 
 	consumers = [
 		{id:1 , name:"Athira", status:"Active"},
 		{id:2 , name:"Maya", status:"Active"},
-		{id:3 , name:"Parul", status:"Active"},
+		{id:3 , name:"Paul", status:"Active"},
 	];
 
 	onAdd(){

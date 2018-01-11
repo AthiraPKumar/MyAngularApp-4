@@ -27,7 +27,7 @@ export class DataService {
   }
 
   update(resourse){
-  	return this.http.patch(this.url + '/' + resourse.id, JSON.stringify({ isRead:true }))
+  	return this.http.put(this.url + '/' + resourse.id, JSON.stringify({ isRead:true , eligible:'no'}))
     .map(response => response.json())
     .catch(this.handleError);
   }

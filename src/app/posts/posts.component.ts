@@ -12,7 +12,7 @@ import { AppError } from './../common/app-error';
 })
 
 export class PostsComponent implements OnInit{
-  posts = [];
+  posts:any = [];
 
   
   heartLikes = {
@@ -31,9 +31,7 @@ export class PostsComponent implements OnInit{
    createPost(input: HTMLInputElement){
    	let post = {title: input.value};
     this.posts.splice(0, 0, post);    // optimistic approach
-
    	input.value = '';
-
    	this.service.create(post)
    	.subscribe(
       newPost => {

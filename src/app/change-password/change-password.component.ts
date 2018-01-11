@@ -35,4 +35,8 @@ export class ChangePasswordComponent {
 		return this.form.get('confirmPassword');
 	}
 
+	changePass(form){
+		console.log(form.value,"password");	
+	}
+
 }

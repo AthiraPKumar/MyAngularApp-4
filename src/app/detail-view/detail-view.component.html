@@ -2,36 +2,42 @@
 <div class="container">
 <div class="col-md-12">
 	<ul class="nav nav-pills">
-		<li [class.active]="viewMode == 'map'">
-			<a (click)="viewMode = 'map'">Map View</a>
+		<li [class.active]="viewMode == 'status'">
+			<a (click)="viewMode = 'status'">Status</a>
 		</li>
-		<li [class.active]="viewMode == 'list'">
-			<a (click)="viewMode = 'list'">List View</a>
+		<li [class.active]="viewMode == 'detail'">
+			<a (click)="viewMode = 'detail'">Details</a>
 		</li>
 	</ul>
 	<div [ngSwitch]="viewMode">
-		<div *ngSwitchCase="'map'">
-			<p>Map view content : This part is map view when you click on the first tab.</p>
+		<div *ngSwitchCase="'status'">
+			<!-- <p>Map view content : This part is status view when you click on the first tab.</p> -->
+			<div>
+				<p>state the index of detail</p>
+				<button class="btn btn-warning" (click)="onAdd()">Add</button>
+				<ul class="list-group">
+					<li class="list-group-item" *ngFor="let people of consumers; index as i">
+						
+						<button class="btn btn-danger" (click)="onRemove(people)">Remove</button>
+						<button class="btn btn-default" (click)="onChange(people)">{{people.status}}</button>
+						<!-- {{i}} - --><span class="name-margin"> {{people.name}}</span>	
+					</li>
+				</ul>
+			</div>
 		</div>
-		<div *ngSwitchCase="'list'">
-			<p>List view content: This part is list view when you click on the second tab</p>
+		<div *ngSwitchCase="'detail'">
+			<!-- <p>List view content: This part is detail view when you click on the second tab</p> -->
+			<!-- Collapsable zippy panels -->
+			<zippy2 title="Shipping Details">
+				<div class="body">
+					Shipping Body
+				</div>	
+			</zippy2>
 		</div>
 		<div *ngSwitchDefault>Otherwise</div>
 	</div>	
 </div>
-<br/><br/><br/><br/>
-<div>
-	<p>state the index of list</p>
-	<button class="btn btn-warning" (click)="onAdd()">Add</button>
-	<ul>
-		<li *ngFor="let people of consumers; index as i">
-			{{i}} - {{people.name}}
-			<button class="btn btn-danger" (click)="onRemove(people)">Remove</button>
-			<button class="btn btn-default" (click)="onChange(people)">{{people.status}}</button>	
-		</li>
-	</ul>
-</div>
-<br/><br/><br/><br/>
+
 <!-- <div>
 	<ul>
 		<li *ngFor="let people of consumers; even as isEven">
@@ -40,4 +46,15 @@
 	</ul>
 </div> -->
 </div>
+
+
+<!-- <bootstrap-panel>
+	<div class="heading">
+		<h2>Panel Heading</h2>
+	</div>
+	<div class="body">
+		<h4>Panel Body</h4>
+	</div>
+</bootstrap-panel>
+ -->
 

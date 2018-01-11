@@ -1,3 +1,10 @@
 .nav{
 	cursor: pointer;
+	margin-bottom: 10px;
+}
+.name-margin{
+	margin-right:50px;
+}
+.btn-warning{
+	margin-bottom: 10px;
 }

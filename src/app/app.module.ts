@@ -10,6 +10,7 @@ import { CoursesService } from './courses.service';
 import { AuthorsService } from './authors.service';
 import { PostService } from './services/post.service';
 import { GithubFollowersService } from './services/github-followers.service';
+import { AlbumService } from './services/album.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { ErrorHandler } from '@angular/core';
 
@@ -38,6 +39,8 @@ import { LikebuttonComponent } from './likebutton/likebutton.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { FavComponent } from './fav/fav.component';
 import { DetailViewComponent } from './detail-view/detail-view.component';
+import { AlbumsComponent } from './albums/albums.component';
+import { Zippy2Component } from './zippy2/zippy2.component';
 
 
 
@@ -70,6 +73,8 @@ import { DetailViewComponent } from './detail-view/detail-view.component';
     ArchiveComponent,
     FavComponent,
     DetailViewComponent,
+    AlbumsComponent,
+    Zippy2Component,
 
   
   ],
@@ -119,6 +124,10 @@ import { DetailViewComponent } from './detail-view/detail-view.component';
         path: 'details',
         component: DetailViewComponent
       },
+      {
+        path: 'album',
+        component: AlbumsComponent
+      },
       { 
         path: '**', 
         component: NotFoundComponent
@@ -130,6 +139,7 @@ import { DetailViewComponent } from './detail-view/detail-view.component';
   	CoursesService,
   	AuthorsService,
     GithubFollowersService,
+    AlbumService,
     {provide : ErrorHandler, useClass: AppErrorHandler}
 	],
   bootstrap: [AppComponent]

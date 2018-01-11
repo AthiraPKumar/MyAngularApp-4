@@ -1,6 +1,7 @@
 .zippy{
 	border:1px solid #ccc;
 	border-radius:2px;
+	margin-bottom: 15px;
 }
 .zippy-heading{
 	font-weight: bold;

@@ -30,7 +30,10 @@ followers: any[];
 
 		// this.service.getAll({ id: id, page: page })
 		this.service.getAll()
-  			.subscribe(allfollowers => this.followers = allfollowers);
+  			.subscribe(allfollowers => {
+              this.followers = allfollowers;
+              console.log(this.followers,"followers");
+        });
 	});
 			
   }

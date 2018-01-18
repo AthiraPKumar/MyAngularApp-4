@@ -25,11 +25,12 @@ listAlbum = [];
       let post= {
         email:input.value
       };
+      this.listAlbum.splice(0, 0, post);
       input.value = '';
       this.service.create(post)
       .subscribe(response =>{
         post['id'] = response.id;
-        this.listAlbum.splice(0, 0, post);
+        // this.listAlbum.splice(0, 0, post);    // optismitic approach - moved on top
       });
    }
 

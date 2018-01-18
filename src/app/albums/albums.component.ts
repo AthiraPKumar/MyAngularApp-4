@@ -44,7 +44,7 @@ listAlbum = [];
    deleteAlbum(post){
     this.service.delete(post.id)
       .subscribe(response => {
-          let index = this.listAlbum.indexOf(post);
+          let index = this.listAlbum.indexOf(post);  // use optismitic approach here..shift on top
           this.listAlbum.splice(index, 1);
       });
    }

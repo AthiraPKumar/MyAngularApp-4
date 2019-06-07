@@ -19,7 +19,7 @@
 					<li class="list-group-item" *ngFor="let people of consumers; index as i">
 						
 						<button class="btn btn-danger" (click)="onRemove(people)">Remove</button>
-						<button class="btn btn-default" (click)="onChange(people)">{{people.status}}</button>
+						<button class="btn btn-default" [ngStyle]="{'background-color': people.status === 'Inactive' ? '#98FB98' : '#fff' }" (click)="onChange(people)">{{people.status}}</button>
 						<!-- {{i}} - --><span class="name-margin"> {{people.name}}</span>	
 					</li>
 				</ul>

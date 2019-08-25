@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="col-md-4">
+    <form>
+        <div class="form-group">
+            <label>Id</label>
+            <input type="text" name="id" class="form-control" [(ngModel)]="newProduct.id">
+          </div>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" class="form-control" [(ngModel)]="newProduct.name">
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" name="description" class="form-control" [(ngModel)]="newProduct.description">
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input type="text" name="price" class="form-control" [(ngModel)]="newProduct.price">
+        </div>
+        <button class="btn btn-primary" (click)="submitProducts(newProduct)">Submit</button>
+        <button class="btn btn-success" (click)="clearForm(newProduct)">Reset</button>
+    </form>
+  </div>
+  <div class="col-md-8">
+      <button class="btn btn-sm btn-success">Add</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>description</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+       <tr *ngFor="let product of products">
+         <td>{{product.id}}</td>
+         <td>{{product.name}}</td>
+         <td>{{product.description}}</td>
+         <td>{{product.price}}</td>
+        <td> <button class="btn btn-xs btn-warning" (click)="displayEditProducts(product)">Update</button></td>
+        <td> <button class="btn btn-xs btn-danger" (click)="deleteProduct(product)">Del</button> </td>
+       </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

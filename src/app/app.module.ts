@@ -11,6 +11,8 @@ import { AuthorsService } from './authors.service';
 import { PostService } from './services/post.service';
 import { GithubFollowersService } from './services/github-followers.service';
 import { AlbumService } from './services/album.service';
+import { StudentsService } from './services/students.service';
+import { TestService } from './test.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { ErrorHandler } from '@angular/core';
 
@@ -41,6 +43,7 @@ import { FavComponent } from './fav/fav.component';
 import { DetailViewComponent } from './detail-view/detail-view.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { Zippy2Component } from './zippy2/zippy2.component';
+import { TestComponent } from './test/test.component';
 
 
 
@@ -75,6 +78,7 @@ import { Zippy2Component } from './zippy2/zippy2.component';
     DetailViewComponent,
     AlbumsComponent,
     Zippy2Component,
+    TestComponent,
 
   
   ],
@@ -128,6 +132,10 @@ import { Zippy2Component } from './zippy2/zippy2.component';
         path: 'album',
         component: AlbumsComponent
       },
+      {
+        path: 'test',
+        component: TestComponent
+      },
       { 
         path: '**', 
         component: NotFoundComponent
@@ -139,8 +147,10 @@ import { Zippy2Component } from './zippy2/zippy2.component';
   	CoursesService,
   	AuthorsService,
     GithubFollowersService,
+    StudentsService,
     AlbumService,
-    {provide : ErrorHandler, useClass: AppErrorHandler}
+    TestService
+    // {provide : ErrorHandler, useClass: AppErrorHandler}
 	],
   bootstrap: [AppComponent]
 })

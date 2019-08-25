@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StudentsService } from './../services/students.service';
 
 @Component({
   selector: 'detail-view',
@@ -7,6 +8,17 @@ import { Component } from '@angular/core';
 })
 export class DetailViewComponent {
 	viewMode:string = 'status';
+	students:any = [];
+
+	constructor(public studentsService: StudentsService){}
+
+	ngOnInit(){
+		this.studentsService.getStudents()
+		.subscribe((response) => {
+			this.students = response;
+			console.log(this.students,'students');
+		})
+	}
 
 	consumers = [
 		{id:1 , name:"Athira", status:"Active"},
@@ -24,4 +36,6 @@ export class DetailViewComponent {
 	onChange(people){
 		people.status ="Inactive";
 	};
+
+
 }

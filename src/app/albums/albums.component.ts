@@ -17,7 +17,6 @@ listAlbum = [];
     this.service.getAll()
       .subscribe(response => {
         this.listAlbum = response;
-        console.log(response,"data");
       });
   }
 
@@ -42,11 +41,13 @@ listAlbum = [];
    }
 
    deleteAlbum(post){
-    this.service.delete(post.id)
-      .subscribe(response => {
-          let index = this.listAlbum.indexOf(post);  // use optismitic approach here..shift on top
-          this.listAlbum.splice(index, 1);
-      });
+    let index = this.listAlbum.indexOf(post);
+    this.listAlbum.splice(index,1);
+    // this.service.delete(post.id)
+    //   .subscribe(response => {
+    //       let index = this.listAlbum.indexOf(post);  // use optismitic approach here..shift on top
+    //       this.listAlbum.splice(index, 1);
+    //   });
    }
 
   
